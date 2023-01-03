@@ -1,34 +1,27 @@
-let allProjects = []
+export const allProjects = [];
 
-function project (title) {
-    this.title = title;
+function project(title) {
+  this.title = title;
 }
 
-const projectModal = () => {
-    let modal = document.querySelector('#projectModal')
-    modal.showModal()
-}
+export const showModal = () => {
+  let modal = document.querySelector("#projectModal");
+  modal.showModal();
+};
 
-const submitProject = () => {
-    // Grabbing the value of the input
-    let projectName = document.getElementById('projectName')
-    let storedProjectName = new project(projectName.value)
-    
-    //Storing info into object
-    let projectInfo = {
-            "title": storedProjectName.title,
-            "element": '',
-            "tasks": [
-                "task 1",
-                "task 2",
-                "task 3",
-                "task 4"
-            ],
-        }
-    allProjects.push(projectInfo)
+export const submitProject = () => {
+  // Grabbing the value of the input
+  let projectName = document.getElementById("projectName");
+  let storedProjectName = new project(projectName.value);
 
-    //Clearing the input
-    projectName.value = ''
-}
+  //Storing info into object
+  let projectInfo = {
+    title: storedProjectName.title,
+    element: "",
+    tasks: ["task 1", "task 2", "task 3", "task 4"],
+  };
+  allProjects.push(projectInfo);
 
-export { projectModal, submitProject, allProjects}
+  //Clearing the input
+  projectName.value = "";
+};
