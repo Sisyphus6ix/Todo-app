@@ -19,7 +19,19 @@
             <div class="left-side">
                 <div class="leftside-header"><h2>Projects</h2></div>
                 <!-- Have project titles displayed here -->
-                <button id="projectBtn">+ Add Project</button>
+                <button id="projectBtn">New Project</button>
+                <dialog class="projectModal" id="projectModal">
+                    <div class="projectModal-Header">
+                        <h5>New Project</h5>
+                    </div>
+                    <form class="form" method="dialog">
+                        <div class="projectName">
+                            <label>Name : </label>
+                            <input type="text">
+                        </div>
+                        <button class="submitBtn" type="submit">Add Project</button>
+                    </form>
+                </dialog>
             </div>
             <div class="right-side">
                 <div class="rightside-header"><h1>Example</h1></div>

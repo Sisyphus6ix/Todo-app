@@ -1,1 +1,1 @@
-document.getElementById("projectBtn").addEventListener("click",(()=>{alert("This button works")}));
+(()=>{let e=document.getElementById("projectBtn"),t=document.querySelector("#projectModal");e.addEventListener("click",(()=>{t.showModal()}))})();
