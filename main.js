@@ -1,1 +1,1 @@
-alert("Its working");
+document.getElementById("projectBtn").addEventListener("click",(()=>{alert("This button works")}));
