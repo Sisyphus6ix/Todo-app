@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>To Do App</title>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="content">
+        <div class="header">
+            <div class="header-logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/1287/1287087.png" alt="Checkbox">
+            </div>
+            <div class="header-title"><p>Never Lose Track Of What ToDo</p></div>
+        </div>
+        <div class="main">
+            <div class="left-side">
+                <div class="leftside-header"><h2>Projects</h2></div>
+                <!-- Have project titles displayed here -->
+                <button class="projectBtn">+ Add Project</button>
+            </div>
+            <div class="right-side">
+                <div class="rightside-header"><h1>Example</h1></div>
+                <button class="taskBtn">+ Add Task</button>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
