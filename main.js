@@ -1,1 +1,1 @@
-(()=>{let e=document.getElementById("projectBtn"),t=document.querySelector("#projectModal");e.addEventListener("click",(()=>{t.showModal()}))})();
+(()=>{"use strict";let e=document.getElementById("projectBtn"),t=document.querySelector("#projectModal"),c=document.getElementById("submitBtn");e.addEventListener("click",(()=>{t.showModal()})),c.addEventListener("click",(()=>{let e=document.getElementById("projectName");console.log(e.value)}))})();
