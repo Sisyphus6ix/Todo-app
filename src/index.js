@@ -17,5 +17,7 @@ projectSubmitBtn.addEventListener('click', () => {
     let projectName = document.getElementById('projectName')
     console.log(projectName.value)
 
-    // projectName.innerText = ""
+    let storedProjectName = new project(projectName.value)
+    allProjects.push(storedProjectName)
+    console.table(allProjects)
 })
