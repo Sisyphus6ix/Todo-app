@@ -22,7 +22,6 @@ projectBtn.addEventListener('click', () => {
 //Submit button in modal functionality
 projectSubmitBtn.addEventListener('click', () => {
     let projectName = document.getElementById('projectName')
-    // console.log(projectName.value)
     let storedProjectName = new project(projectName.value)
     allProjects.push(storedProjectName.title)
 
@@ -32,9 +31,9 @@ projectSubmitBtn.addEventListener('click', () => {
     // Debugging below
     console.log(storedProjectName)
     console.table(allProjects)
-    // for (i = 0; i < allProjects.length; i++){
-    //     console.log(allProjects[i])
-    // }
     
+    for (let i = 0; i < allProjects.length; i++){
+        projectDivContainer[i].appendChild(projectDiv)
+        console.log(allProjects[i])
+    }
 })
-
