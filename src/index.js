@@ -4,10 +4,8 @@ import { project } from "./project"
 let projectBtn = document.getElementById('projectBtn')
 let modal = document.querySelector('#projectModal')
 let projectSubmitBtn = document.getElementById('submitBtn')
-////
 let projectDivContainer = document.getElementsByClassName('projectDiv')
-let projectDiv = document.createElement('div')
-projectDiv.setAttribute('class', 'projects')
+
 
 
 const test = () => {
@@ -21,19 +19,16 @@ projectBtn.addEventListener('click', () => {
 
 //Submit button in modal functionality
 projectSubmitBtn.addEventListener('click', () => {
+    // Storing the value of the input button in my array
     let projectName = document.getElementById('projectName')
     let storedProjectName = new project(projectName.value)
     allProjects.push(storedProjectName.title)
 
-    projectDivContainer[0].appendChild(projectDiv)
+    //Updating my html with the projects from the array
+    let projectDiv = projectDivContainer[0].appendChild(document.createElement('div'))
     projectDiv.innerText = storedProjectName.title
+    projectDiv.setAttribute('class', 'projects')
 
-    // Debugging below
-    console.log(storedProjectName)
-    console.table(allProjects)
-    
-    for (let i = 0; i < allProjects.length; i++){
-        projectDivContainer[i].appendChild(projectDiv)
-        console.log(allProjects[i])
-    }
+    //Clearing the input
+    projectName.value = ''
 })

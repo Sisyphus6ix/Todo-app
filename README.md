@@ -3,4 +3,5 @@ This project is created for the sole purpose of learning and part of the "The Od
 
 ### Things to do!
 - Focus on function of page
-- Work on displaying stored projects with button to add tasks
+- Work on displaying stored projects
+- Work on adding tasks to projects
