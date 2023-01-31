@@ -24,11 +24,17 @@ projectSubmitBtn.addEventListener('click', () => {
     let projectName = document.getElementById('projectName')
     // console.log(projectName.value)
     let storedProjectName = new project(projectName.value)
-    allProjects.push(storedProjectName)
-    // console.table(allProjects)
+    allProjects.push(storedProjectName.title)
 
     projectDivContainer[0].appendChild(projectDiv)
-    console.log(allProjects[0].title)
+    projectDiv.innerText = storedProjectName.title
+
+    // Debugging below
+    console.log(storedProjectName)
+    console.table(allProjects)
+    // for (i = 0; i < allProjects.length; i++){
+    //     console.log(allProjects[i])
+    // }
     
 })
 
