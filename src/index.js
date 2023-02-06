@@ -1,4 +1,4 @@
-import { projectModal, submitProject } from "./project"
+import { allProjects, projectModal, submitProject } from "./project"
 import { test } from "./task"
 
 let projectBtn = document.getElementById('projectBtn')

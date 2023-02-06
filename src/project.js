@@ -1,4 +1,3 @@
-let i = 0
 let allProjects = []
 
 function project (title) {
@@ -11,18 +10,30 @@ const projectModal = () => {
 }
 
 const submitProject = () => {
-    
-    // Storing the inputs value into array
+    // Grabbing the value of the input
     let projectName = document.getElementById('projectName')
     let storedProjectName = new project(projectName.value)
-    allProjects.push(storedProjectName.title)
-
+   
     //Updating my html with the projects from the array
     let projectDivContainer = document.getElementsByClassName('projectDiv')
-    let projectDiv = projectDivContainer[0].appendChild(document.createElement('div'))
-    projectDiv.innerText = storedProjectName.title
-    projectDiv.setAttribute('id', 'projects')
-    projectDiv.setAttribute('value', i++)
+    let newProject = document.createElement('div')
+    projectDivContainer[0].appendChild(newProject)
+    newProject.innerText = storedProjectName.title
+    newProject.setAttribute('id', 'projects')
+    
+    //Storing info into object
+    let projectInfo = {
+            "title": storedProjectName.title,
+            "element": newProject,
+            "tasks": [
+                "task 1",
+                "task 2",
+                "task 3",
+                "task 4"
+            ],
+        }
+    allProjects.push(projectInfo)
+    console.log(allProjects)
 
     //Clearing the input
     projectName.value = ''
