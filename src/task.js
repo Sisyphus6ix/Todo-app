@@ -1,23 +1,16 @@
 import { allProjects } from "./project";
 
 const test = () => {
-    let editProjects = document.querySelectorAll('projectDiv')
-    let projectTitleContainer = document.getElementsByTagName('rightside-header')
-    let projectTitle = projectTitleContainer[0]
-    // console.log(editProjects)
-
-    // Working
-    // for (let project of allProjects) {
-    //     project.addEventListener('click', function(event) {
-    //         console.log(event.target.innerText)
-    //         projectTitle.innerText = ''
-    //         projectTitle.innerText = event.target.innerText
-    //     })
-    // }
-
-    for ( project of editProjects){
-        project.addEventListener('click', function (){
-            console.log(project)
+    let editProjects = document.getElementsByClassName('projectDiv')
+    let projectTitleContainer = document.getElementsByClassName('rightside-header')
+    let projectTitle = document.createElement('div')
+    
+    for (let project of editProjects){
+        project.addEventListener('click', (event) => {
+            console.log(event.target.innerText)
+            // console.log(projectTitleContainer[0])
+            projectTitleContainer[0].appendChild(projectTitle)
+            projectTitle.innerText = event.target.innerText
         })
     }
 }
