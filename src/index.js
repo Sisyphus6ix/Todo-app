@@ -1,5 +1,5 @@
-import { addedProjectLogic, projectEvent } from "./dom"
-import { allProjects, projectModal, submitProject } from "./project"
+import { addedProjectLogic, projectEvents } from "./dom"
+import { projectModal, submitProject } from "./project"
 
 let projectBtn = document.getElementById('projectBtn')
 let projectSubmitBtn = document.getElementById('submitBtn')
@@ -14,7 +14,7 @@ projectBtn.addEventListener('click', () => {
 projectSubmitBtn.addEventListener('click', () => {
     submitProject()
     addedProjectLogic()
-    projectEvent()
+    projectEvents()
 })
 
 //Makes task modal appear

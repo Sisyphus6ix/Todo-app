@@ -1,7 +1,8 @@
 import { allProjects } from "./project"
 
 let projectDivContainer = document.getElementsByClassName('projectDiv')
-let rightsideTitle = document.getElementsByClassName('rightside-header-title')
+let rightsideTitle = document.getElementsByClassName('rightside-header-title')[0]
+
 
 const clearProjectDivContainer = () => {
     projectDivContainer[0].innerText = ''
@@ -20,7 +21,27 @@ const addedProjectLogic = () => {
         allProjects[i].element = newProject
     }
 
-    console.log(allProjects)
+    // console.log(allProjects)
 }
 
-export { addedProjectLogic, projectEvent }
+const projectClickHandler = (project) => {
+    alert('its working!')
+    rightsideTitle.innerText = project.innerText
+}
+
+
+const projectEvents = () => {
+    for (const projectIndex in projectDivContainer){
+        console.log(projectIndex)
+        // const project = projectDivContainer[projectIndex]
+        // console.log(project)
+        // const newTitle = document.createElement('h3')
+        // newTitle.innerText = project.innerText
+        // console.log(newTitle)
+        // newTitle.addEventListener('click', () => projectClickHandler(project))
+        // rightsideTitle.append(newTitle)
+    }
+}
+
+
+export { addedProjectLogic, projectEvents }
