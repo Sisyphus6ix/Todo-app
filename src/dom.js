@@ -1,13 +1,13 @@
 import { allProjects } from "./project"
 
 let projectDivContainer = document.getElementsByClassName('projectDiv')
-let rightSideHeaderContainer = document.getElementsByClassName('rightside-header')
+let rightsideTitle = document.getElementsByClassName('rightside-header-title')
 
 const clearProjectDivContainer = () => {
     projectDivContainer[0].innerText = ''
 }
 
-const pageLogic = () => {
+const addedProjectLogic = () => {
     // Clears my project div
     clearProjectDivContainer()
 
@@ -23,18 +23,4 @@ const pageLogic = () => {
     console.log(allProjects)
 }
 
-const projectEvent = () => {
-    let rightSideHeader = document.createElement('h3')
-    rightSideHeaderContainer[0].appendChild(rightSideHeader)
-    rightSideHeader.innerText = ''
-     
-    for (let project of projectDivContainer){
-        project.addEventListener('click', (event) => {
-            console.log(event.target.innerText) 
-            rightSideHeader.innerText = event.target.innerText
-        })
-    }   
-}
-
-
-export { pageLogic, projectEvent }
+export { addedProjectLogic, projectEvent }

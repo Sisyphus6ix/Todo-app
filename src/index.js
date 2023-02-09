@@ -1,4 +1,4 @@
-import { pageLogic, projectEvent } from "./dom"
+import { addedProjectLogic, projectEvent } from "./dom"
 import { allProjects, projectModal, submitProject } from "./project"
 
 let projectBtn = document.getElementById('projectBtn')
@@ -13,7 +13,7 @@ projectBtn.addEventListener('click', () => {
 //Project modal submit button
 projectSubmitBtn.addEventListener('click', () => {
     submitProject()
-    pageLogic()
+    addedProjectLogic()
     projectEvent()
 })
 
