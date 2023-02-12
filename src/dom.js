@@ -1,7 +1,5 @@
 let projectDivContainer = document.getElementsByClassName("projectDiv")[0];
-let rightsideTitle = document.getElementsByClassName(
-  "rightside-header-title"
-)[0];
+let rightsideTitle = document.getElementsByClassName("rightside-header-title")[0];
 
 const clearProjectDivContainer = () => {
   projectDivContainer.innerText = "";

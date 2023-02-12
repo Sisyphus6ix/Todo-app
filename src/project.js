@@ -4,7 +4,7 @@ function project(title) {
   this.title = title;
 }
 
-export const showModal = () => {
+export const projectModal = () => {
   let modal = document.querySelector("#projectModal");
   modal.showModal();
 };
