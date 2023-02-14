@@ -1,3 +1,5 @@
+import { allProjects } from "./project";
+
 let projectDivContainer = document.getElementsByClassName("projectDiv")[0];
 let rightsideTitle = document.getElementsByClassName("rightside-header-title")[0];
 
@@ -16,6 +18,7 @@ export const renderProjects = (projects) => {
 
     newProject.setAttribute("id", i);
     newProject.innerText = project.title;
+    project.element = newProject
 
     projectDivContainer.appendChild(newProject);
 
@@ -26,6 +29,6 @@ export const renderProjects = (projects) => {
 };
 
 const projectClickHandler = (project) => {
-  console.log("click event called");
+  console.log(allProjects);
   rightsideTitle.innerText = project.title;
 };

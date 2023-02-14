@@ -1,6 +1,6 @@
 import { renderProjects } from "./dom";
 import { projectModal, submitProject, allProjects } from "./project";
-import { taskModal } from "./task";
+import { submitTask, taskModal } from "./task";
 
 let projectBtn = document.getElementById("projectBtn");
 let projectSubmitBtn = document.getElementById("projectSubmitBtn");
@@ -25,5 +25,5 @@ taskBtn.addEventListener("click", () => {
 
 // Submit button in task modal
 taskSubmitBtn.addEventListener('click', () => {
-  console.log("task button works");
+  submitTask()
 })
