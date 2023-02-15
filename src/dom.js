@@ -2,6 +2,7 @@ import { allProjects } from "./project";
 
 let projectDivContainer = document.getElementsByClassName("projectDiv")[0];
 let rightsideTitle = document.getElementsByClassName("rightside-header-title")[0];
+let activeProject = false
 
 const clearProjectDivContainer = () => {
   projectDivContainer.innerText = "";
@@ -22,13 +23,19 @@ export const renderProjects = (projects) => {
 
     projectDivContainer.appendChild(newProject);
 
-    newProject.addEventListener("click", () => {
-      projectClickHandler(project);
+    newProject.addEventListener("click", (event) => {
+      // Removes the previously active project
+       if (activeProject == true){
+        document.getElementsByClassName('active')[0].removeAttribute('class')
+      }
+      projectClickHandler(project, event);
     });
   }
 };
 
-const projectClickHandler = (project) => {
-  console.log(allProjects);
+const projectClickHandler = (project, event) => {
+  // console.log(event.target);
+  event.target.setAttribute('class', 'active')
   rightsideTitle.innerText = project.title;
+  activeProject = true
 };
