@@ -19,11 +19,12 @@ export const submitTask = () => {
 
     // console.log(document.getElementsByClassName('active'))
 
+    let currentProject = undefined
     for (let i = 0; i < allProjects.length; i++){
-        let project = allProjects.find(object => object.element.className == 'active')
-        console.log(project)
-        project.tasks.push(taskInfo)
+        currentProject = allProjects.find(object => object.element.className == 'active')
+        console.log(currentProject)
     }
+    currentProject.tasks.push(taskInfo)
 
     console.log(allProjects)
 }
