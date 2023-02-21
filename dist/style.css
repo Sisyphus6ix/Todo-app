@@ -49,6 +49,9 @@
     padding: 5rem;
 }
 
-/* .projectModal-Header, .form {
-    margin-left: 35%;
-} */
+#taskModal {
+    margin: auto;
+    max-width: 600px;
+    border-radius: 30px;
+    padding: 5rem;
+}

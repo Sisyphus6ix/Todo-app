@@ -2,7 +2,7 @@ import { allProjects } from "./project";
 
 // constructor for new tasks
 function task(title, description) {
-    this.title = title
+    this.title = title,
     this.description = description
 }
 
@@ -22,9 +22,9 @@ export const submitTask = () => {
     let currentProject = undefined
     for (let i = 0; i < allProjects.length; i++){
         currentProject = allProjects.find(object => object.element.className == 'active')
-        console.log(currentProject)
+        // console.log(currentProject)
     }
     currentProject.tasks.push(taskInfo)
 
-    console.log(allProjects)
+    // console.table(allProjects)
 }

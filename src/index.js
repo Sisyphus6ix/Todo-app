@@ -1,4 +1,4 @@
-import { renderProjects } from "./dom";
+import { renderProjects, renderTasks } from "./dom";
 import { projectModal, submitProject, allProjects } from "./project";
 import { submitTask, taskModal } from "./task";
 
@@ -26,4 +26,7 @@ taskBtn.addEventListener("click", () => {
 // Submit button in task modal
 taskSubmitBtn.addEventListener('click', () => {
   submitTask()
+  renderTasks(allProjects)
 })
+
+console.log(allProjects)

@@ -1,5 +1,6 @@
 import { allProjects } from "./project";
 
+let taskDivContainer = document.getElementsByClassName('taskDiv')[0]
 let projectDivContainer = document.getElementsByClassName("projectDiv")[0];
 let rightsideTitle = document.getElementsByClassName("rightside-header-title")[0];
 let activeProject = false
@@ -39,3 +40,18 @@ const projectClickHandler = (project, event) => {
   rightsideTitle.innerText = project.title;
   activeProject = true
 };
+
+export const renderTasks = (projects) => {
+  let project = undefined
+  let newTask = undefined
+
+  for (let i = 0; i < projects.length; i++) {
+    project = projects.find(object => object.element.className == 'active')
+    console.log(project.tasks[i])
+    newTask = document.createElement('div')
+
+    newTask.setAttribute('id', i)
+    newTask.innerText = project.tasks
+  }
+  taskDivContainer.appendChild(newTask)
+}
