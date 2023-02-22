@@ -47,19 +47,21 @@ const projectClickHandler = (project, event) => {
 };
 
 export const renderTasks = (projects) => {
+  // Clears my task div
   clearTaskDiv()
 
   let project = undefined
 
   // For loop for searching all of my projects and finding the active one
-  for (let i = 1; i < projects.length; i++) {
+  // Updates the project variable to be my active project
+  for (let i = 0; i < projects.length; i++) {
      project = projects.find(object => object.element.className == 'active')
   }
   console.log(project)
 
   // For loop for searching the active projects tasks and then adding them to page
   for (let task of project.tasks){
-    // console.log(task.title)
+  
     let newTask = document.createElement('div')
     let taskTitle = document.createElement('h5')
     let taskDescription = document.createElement('p')
@@ -84,7 +86,8 @@ export const renderTasks = (projects) => {
 const locateTaskInfo = () => {
   let taskDetails = document.getElementsByClassName('taskDetails')
   let removeTaskBtn = document.getElementsByClassName('checkbox')
-  
+
+  // Giving my tasks and remove buttons the same indexes
   for (let i = 0; i < taskDetails.length; i++) {
     taskDetails[i].setAttribute('id', i)
     removeTaskBtn[i].setAttribute('id', i)
