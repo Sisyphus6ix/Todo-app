@@ -1,9 +1,10 @@
 import { allProjects } from "./project";
 
 // constructor for new tasks
-function task(title, description) {
+function task(title, description, status) {
     this.title = title,
     this.description = description
+    this.status = status
 }
 
 export const taskModal = () => {
@@ -14,7 +15,7 @@ export const taskModal = () => {
 export const submitTask = () => {
     let taskName = document.getElementById('taskName')
     let taskDescription = document.getElementById('taskDescription')
-    let taskInfo = new task(taskName.value, taskDescription.value)
+    let taskInfo = new task(taskName.value, taskDescription.value, 'Incomplete')
     console.log(taskInfo)
 
     let currentProject = undefined

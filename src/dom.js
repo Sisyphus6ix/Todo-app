@@ -63,6 +63,7 @@ export const renderTasks = (projects) => {
     let newTask = document.createElement('div')
     let taskTitle = document.createElement('h5')
     let taskDescription = document.createElement('p')
+    let removeTaskBtn = document.createElement('input')
 
     taskDescription.innerText = task.description
     taskTitle.innerText = task.title
@@ -70,17 +71,22 @@ export const renderTasks = (projects) => {
     taskDivContainer.appendChild(newTask)
     newTask.appendChild(taskTitle)
     newTask.appendChild(taskDescription)
+    newTask.appendChild(removeTaskBtn)
     newTask.setAttribute('class', 'taskDetails')
     taskTitle.setAttribute('class', 'taskTitle')
     taskDescription.setAttribute('class', 'taskDescription')
+    removeTaskBtn.setAttribute('type', 'checkbox')
+    removeTaskBtn.setAttribute('class', 'checkbox')
   }
   locateTaskInfo()
 }
 
 const locateTaskInfo = () => {
   let taskDetails = document.getElementsByClassName('taskDetails')
-
+  let removeTaskBtn = document.getElementsByClassName('checkbox')
+  
   for (let i = 0; i < taskDetails.length; i++) {
     taskDetails[i].setAttribute('id', i)
+    removeTaskBtn[i].setAttribute('id', i)
   }
 }
