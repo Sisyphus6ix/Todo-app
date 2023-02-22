@@ -49,7 +49,6 @@ const projectClickHandler = (project, event) => {
 export const renderTasks = (projects) => {
   clearTaskDiv()
 
-  let newTask = undefined
   let project = undefined
 
   // For loop for searching all of my projects and finding the active one
@@ -61,8 +60,27 @@ export const renderTasks = (projects) => {
   // For loop for searching the active projects tasks and then adding them to page
   for (let task of project.tasks){
     // console.log(task.title)
-    newTask = document.createElement('div')
-    newTask.innerText = task.title 
+    let newTask = document.createElement('div')
+    let taskTitle = document.createElement('h5')
+    let taskDescription = document.createElement('p')
+
+    taskDescription.innerText = task.description
+    taskTitle.innerText = task.title
+
     taskDivContainer.appendChild(newTask)
+    newTask.appendChild(taskTitle)
+    newTask.appendChild(taskDescription)
+    newTask.setAttribute('class', 'taskDetails')
+    taskTitle.setAttribute('class', 'taskTitle')
+    taskDescription.setAttribute('class', 'taskDescription')
+  }
+  locateTaskInfo()
+}
+
+const locateTaskInfo = () => {
+  let taskDetails = document.getElementsByClassName('taskDetails')
+
+  for (let i = 0; i < taskDetails.length; i++) {
+    taskDetails[i].setAttribute('id', i)
   }
 }

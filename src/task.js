@@ -17,14 +17,12 @@ export const submitTask = () => {
     let taskInfo = new task(taskName.value, taskDescription.value)
     console.log(taskInfo)
 
-    // console.log(document.getElementsByClassName('active'))
-
     let currentProject = undefined
     for (let i = 0; i < allProjects.length; i++){
         currentProject = allProjects.find(object => object.element.className == 'active')
-        // console.log(currentProject)
     }
     currentProject.tasks.push(taskInfo)
 
-    // console.table(allProjects)
+    taskName.value = ""
+    taskDescription.value = ""
 }

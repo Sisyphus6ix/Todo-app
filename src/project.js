@@ -18,9 +18,7 @@ export const submitProject = () => {
   let projectInfo = {
     title: storedProjectName.title,
     element: "",
-    tasks: [
-      // { "Default Task": "Just an example"}
-  ],
+    tasks: []
   };
   allProjects.push(projectInfo);
 
