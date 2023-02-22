@@ -9,6 +9,10 @@ const clearProjectDivContainer = () => {
   projectDivContainer.innerText = "";
 };
 
+const clearTaskDiv = () => {
+  taskDivContainer.innerText = ''
+}
+
 export const renderProjects = (projects) => {
   // Clears my project div
   clearProjectDivContainer();
@@ -39,19 +43,24 @@ const projectClickHandler = (project, event) => {
   event.target.setAttribute('class', 'active')
   rightsideTitle.innerText = project.title;
   activeProject = true
+  renderTasks(allProjects)
 };
 
 export const renderTasks = (projects) => {
-  let project = undefined
+  clearTaskDiv()
+
   let newTask = undefined
+  let project = undefined
 
-  for (let i = 0; i < projects.length; i++) {
-    project = projects.find(object => object.element.className == 'active')
-    console.log(project.tasks[i])
-    newTask = document.createElement('div')
-
-    newTask.setAttribute('id', i)
-    newTask.innerText = project.tasks
+  for (let i = 1; i < projects.length; i++) {
+     project = projects.find(object => object.element.className == 'active')
   }
-  taskDivContainer.appendChild(newTask)
+  console.log(project)
+  
+  for (let task of project.tasks){
+    console.log(task.title)
+    newTask = document.createElement('div')
+    newTask.innerText = task.title 
+    taskDivContainer.appendChild(newTask)
+  }
 }
