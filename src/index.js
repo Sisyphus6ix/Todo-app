@@ -1,11 +1,13 @@
 import { renderProjects, renderTasks } from "./dom";
 import { projectModal, submitProject, allProjects } from "./project";
 import { submitTask, taskModal } from "./task";
+import { checkingTasks } from "./clear";
 
 let projectBtn = document.getElementById("projectBtn");
 let projectSubmitBtn = document.getElementById("projectSubmitBtn");
 let taskBtn = document.getElementById("taskBtn");
 let taskSubmitBtn = document.getElementById('taskSubmitBtn')
+let clearBtn = document.getElementById('clearBtn')
 
 // Makes project modal appear
 projectBtn.addEventListener("click", () => {
@@ -27,6 +29,11 @@ taskBtn.addEventListener("click", () => {
 taskSubmitBtn.addEventListener('click', () => {
   submitTask()
   renderTasks(allProjects)
+})
+
+clearBtn.addEventListener('click', () => {
+  // alert('This works')
+  checkingTasks()
 })
 
 console.log(allProjects)
