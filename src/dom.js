@@ -52,13 +52,15 @@ export const renderTasks = (projects) => {
   let newTask = undefined
   let project = undefined
 
+  // For loop for searching all of my projects and finding the active one
   for (let i = 1; i < projects.length; i++) {
      project = projects.find(object => object.element.className == 'active')
   }
   console.log(project)
-  
+
+  // For loop for searching the active projects tasks and then adding them to page
   for (let task of project.tasks){
-    console.log(task.title)
+    // console.log(task.title)
     newTask = document.createElement('div')
     newTask.innerText = task.title 
     taskDivContainer.appendChild(newTask)
