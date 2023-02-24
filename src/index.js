@@ -33,7 +33,6 @@ taskSubmitBtn.addEventListener('click', () => {
 
 clearBtn.addEventListener('click', () => {
   // alert('This works')
-  checkingTasks()
+  checkingTasks(allProjects)
+  renderTasks(allProjects)
 })
-
-console.log(allProjects)

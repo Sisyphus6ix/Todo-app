@@ -1,10 +1,9 @@
 import { allProjects } from "./project";
 
 // constructor for new tasks
-function task(title, description, status) {
+function task(title, description) {
     this.title = title,
     this.description = description
-    this.status = status
 }
 
 export const taskModal = () => {
@@ -16,7 +15,7 @@ export const submitTask = () => {
     // Grabs the value of these inputs and creates task with my constructor
     let taskName = document.getElementById('taskName')
     let taskDescription = document.getElementById('taskDescription')
-    let taskInfo = new task(taskName.value, taskDescription.value, 'incomplete')
+    let taskInfo = new task(taskName.value, taskDescription.value)
     console.log(taskInfo)
 
     let currentProject = undefined
