@@ -1,38 +1,55 @@
-import { renderProjects, renderTasks } from "./dom";
-import { projectModal, submitProject, allProjects } from "./project";
+import { projectModal, submitProject } from "./project";
 import { submitTask, taskModal } from "./task";
-import { checkingTasks } from "./clear";
+import { getSelectedProject, selectProject, state } from "./project/state";
+import { renderProjects, renderSelectedProject } from "./project/render";
+import { renderTasks } from "./task/render";
+import { clearTasks } from "./task/state";
 
 let projectBtn = document.getElementById("projectBtn");
 let projectSubmitBtn = document.getElementById("projectSubmitBtn");
 let taskBtn = document.getElementById("taskBtn");
-let taskSubmitBtn = document.getElementById('taskSubmitBtn')
-let clearBtn = document.getElementById('clearBtn')
+let taskSubmitBtn = document.getElementById("taskSubmitBtn");
+let clearBtn = document.getElementById("clearBtn");
 
 // Makes project modal appear
 projectBtn.addEventListener("click", () => {
   projectModal();
 });
 
+const renderTaskWithHandler = (project) => {
+  // This can be confusing. When you check a task, you render the tasks once again
+  const checkTaskHandler = (task, isChecked) => {
+    task.checked = isChecked;
+    renderTasks(project, checkTaskHandler);
+  };
+  renderTasks(project, checkTaskHandler);
+};
+
 // Submit button for project modal
 projectSubmitBtn.addEventListener("click", () => {
   submitProject();
-  renderProjects(allProjects);
+  renderProjects(state.projects, (project) => {
+    selectProject(project);
+    renderSelectedProject(state.selectedProjectId, project);
+    renderTaskWithHandler(project);
+  });
 });
 
 // Makes task modal appear
 taskBtn.addEventListener("click", () => {
-  taskModal()
+  taskModal();
 });
 
 // Submit button in task modal
-taskSubmitBtn.addEventListener('click', () => {
-  submitTask()
-  renderTasks(allProjects)
-})
+taskSubmitBtn.addEventListener("click", () => {
+  const project = getSelectedProject();
 
-clearBtn.addEventListener('click', () => {
-  // alert('This works')
-  checkingTasks(allProjects)
-  renderTasks(allProjects)
-})
+  submitTask(project);
+  renderTaskWithHandler(project);
+});
+
+clearBtn.addEventListener("click", () => {
+  const project = getSelectedProject();
+  clearTasks(project);
+  renderTaskWithHandler(project);
+});

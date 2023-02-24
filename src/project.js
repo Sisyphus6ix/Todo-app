@@ -1,4 +1,4 @@
-export const allProjects = [];
+import { addProject } from "./project/state";
 
 function project(title) {
   this.title = title;
@@ -18,9 +18,9 @@ export const submitProject = () => {
   let projectInfo = {
     title: storedProjectName.title,
     element: "",
-    tasks: []
+    tasks: [],
   };
-  allProjects.push(projectInfo);
+  addProject(projectInfo);
 
   //Clearing the input
   projectName.value = "";
