@@ -3,43 +3,87 @@
 }
 
 .header img {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .header {
     display: flex;
     align-items: center;
     text-align: center;
-    padding-left: 20px;
-    height: 3rem;
-    background-color: #415a77;
+    padding: 20px;
+    background-color: #33415C;
 }
+
+.ToDo-word {
+    color: #9ca1ad;
+}
+
 .main {
     display: flex;
-    background-color: #e0e1dd;
-    height: 96vh;
+    background-color: #b3b8c4;
+    height: 95vh;
+}
+
+.active {
+    width: 90%;
+    background-color: #979DAC;
+    padding: 10px 0px 10px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .left-side {
-    background-color: #d6d7d5;
-    width: 25vw;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #9ca1ad;
+    width: 20%;
+    /* height: 100%; */
+}
+
+.leftside-header {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.projectDiv  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.button-icon {
+    color: #33415C;
+}
+
+.leftside-header img {
+    width: 30px;
 }
 
 .right-side {
-    width: 75vw;
-    height: 100%;
+    width: 70%;
+    /* height: 100%; */
 }
 
 .rightside-header {
     font-size: 2.5rem;
 }
 
+.btns {
+    display: flex;
+    justify-content:space-around;
+}
+
 #content {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid red; */
 }
 
 #projectModal {
@@ -54,4 +98,12 @@
     max-width: 600px;
     border-radius: 30px;
     padding: 5rem;
+}
+
+button {
+    font-size: larger;
+    background-color: transparent;
+    border: 1px solid #33415C;
+    border-radius: 10px;
+    cursor: pointer;
 }
