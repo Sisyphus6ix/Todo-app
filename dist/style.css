@@ -47,7 +47,6 @@
     gap: 15px;
     background-color: #9ca1ad;
     width: 20%;
-    /* height: 100%; */
 }
 
 .leftside-header {
@@ -81,7 +80,6 @@
 
 .right-side {
     width: 70%;
-    /* height: 100%; */
 }
 
 .rightside-header {
@@ -119,13 +117,37 @@
     padding: 5rem;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.taskmodal-header, .projectModal-Header {
+    font-size: 2rem;
+}
+
 button {
     width: fit-content;
-    padding: 7px;
-    font-size: larger;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
     background-color: transparent;
     border: 1px solid #33415C;
     border-radius: 10px;
+    padding: 7px;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width: 770px) {
+    .header {
+        width: 100%;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .left-side {
+        display: none;
+    }
 }
