@@ -11,7 +11,9 @@ export const renderTasks = (project, onCheck) => {
   // For loop for searching the active projects tasks and then adding them to page
   for (let i in project.tasks) {
     let task = project.tasks[i];
-    let taskElement = document.createElement("div");
+    let taskContainer = document.createElement('div')
+    let taskStatus = document.createElement('div')
+    let taskInfo = document.createElement("div");
     let taskTitle = document.createElement("h5");
     let taskDescription = document.createElement("p");
     let checkbox = document.createElement("input");
@@ -19,11 +21,13 @@ export const renderTasks = (project, onCheck) => {
     taskDescription.innerText = task.description;
     taskTitle.innerText = task.title;
 
-    taskElement.appendChild(taskTitle);
-    taskElement.appendChild(taskDescription);
-    taskElement.appendChild(checkbox);
-    taskElement.setAttribute("class", "taskDetails");
-    taskElement.setAttribute("data-id", i);
+    taskStatus.appendChild(checkbox);
+    taskStatus.appendChild(taskTitle);
+    taskInfo.appendChild(taskDescription);
+    taskStatus.setAttribute("class", 'leftTask')
+    taskInfo.setAttribute("class", "rightTask");
+    taskContainer.setAttribute("data-id", i);
+    taskContainer.setAttribute('class', 'taskContainer')
 
     taskTitle.setAttribute("class", "taskTitle");
 
@@ -38,7 +42,9 @@ export const renderTasks = (project, onCheck) => {
     checkbox.addEventListener("change", (event) => {
       onCheck(task, event.target.checked);
     });
-
-    taskDivContainer.appendChild(taskElement);
+    
+    taskDivContainer.appendChild(taskContainer)
+    taskContainer.appendChild(taskStatus)
+    taskContainer.appendChild(taskInfo);
   }
 };

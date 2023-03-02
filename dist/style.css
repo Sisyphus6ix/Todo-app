@@ -96,9 +96,14 @@
     font-size: 2.5rem;
 }
 
-.taskDetails {
-    margin-left: 35px;
-    font-size: 1.2rem;
+.taskContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leftTask {
+    display: flex;
 }
 
 .btns {
