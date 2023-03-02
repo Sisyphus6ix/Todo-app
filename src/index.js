@@ -10,6 +10,7 @@ let projectSubmitBtn = document.getElementById("projectSubmitBtn");
 let taskBtn = document.getElementById("taskBtn");
 let taskSubmitBtn = document.getElementById("taskSubmitBtn");
 let clearBtn = document.getElementById("clearBtn");
+let navBtn = document.getElementById('hamburger')
 
 // Makes project modal appear
 projectBtn.addEventListener("click", () => {
@@ -53,3 +54,15 @@ clearBtn.addEventListener("click", () => {
   clearTasks(project);
   renderTaskWithHandler(project);
 });
+
+navBtn.addEventListener('click', () => {
+  let onOff = true
+  const mobileProjectRender = document.getElementsByClassName('left-side')[0]
+  if (mobileProjectRender.id == 'nav'){
+    mobileProjectRender.setAttribute('id', 'nav-active')
+    onOff = true
+  } else {
+    mobileProjectRender.setAttribute('id', 'nav')
+    onOff = false
+  }
+})
