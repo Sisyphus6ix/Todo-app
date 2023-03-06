@@ -150,9 +150,14 @@ button {
     padding: 7px;
     cursor: pointer;
     /* border-radius: 0; */
-    -webkit-appearance: none;
+    /* -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none; */
+}
+input [type=text], input[type=button] {
     appearance: none;
+    -webkit-appearance: none;
+    /* -webkit-border-radius: 0; */
 }
 
 @media (max-width: 770px) {
