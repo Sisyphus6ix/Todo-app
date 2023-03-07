@@ -25,3 +25,8 @@ export const submitProject = () => {
   //Clearing the input
   projectName.value = "";
 };
+
+export const closeProjectModal = () => {
+  let modal = document.querySelector("#projectModal")
+  modal.hide()
+}

@@ -78,6 +78,14 @@
     display: flex;
 }
 
+#projectSubmitBtn, #taskSubmitBtn {
+    background-color: #aaffaa;
+}
+
+#projectCloseBtn, #taskCloseBtn {
+    background-color: #ffbebe;
+}
+
 .button-icon {
     color: #33415C;
 }

@@ -1,5 +1,5 @@
-import { projectModal, submitProject } from "./project";
-import { submitTask, taskModal } from "./task";
+import { projectModal, submitProject, closeProjectModal } from "./project";
+import { submitTask, taskModal, closeTaskModal } from "./task";
 import { getSelectedProject, selectProject, state } from "./project/state";
 import { renderProjects, renderSelectedProject } from "./project/render";
 import { renderTasks } from "./task/render";
@@ -7,8 +7,10 @@ import { clearTasks } from "./task/state";
 
 let projectBtn = document.getElementById("projectBtn");
 let projectSubmitBtn = document.getElementById("projectSubmitBtn");
+let projectCloseBtn = document.getElementById('projectCloseBtn')
 let taskBtn = document.getElementById("taskBtn");
 let taskSubmitBtn = document.getElementById("taskSubmitBtn");
+let taskCloseBtn = document.getElementById('taskCloseBtn')
 let clearBtn = document.getElementById("clearBtn");
 let navBtn = document.getElementById('hamburger')
 
@@ -16,6 +18,10 @@ let navBtn = document.getElementById('hamburger')
 projectBtn.addEventListener("click", () => {
   projectModal();
 });
+
+projectCloseBtn.addEventListener('click', () => {
+  closeProjectModal()
+})
 
 const renderTaskWithHandler = (project) => {
   // This can be confusing. When you check a task, you render the tasks once again
@@ -49,6 +55,10 @@ taskSubmitBtn.addEventListener("click", () => {
   renderTaskWithHandler(project);
 });
 
+taskCloseBtn.addEventListener('click', () => {
+  closeTaskModal()
+})
+
 clearBtn.addEventListener("click", () => {
   const project = getSelectedProject();
   clearTasks(project);
@@ -56,7 +66,7 @@ clearBtn.addEventListener("click", () => {
 });
 
 navBtn.addEventListener('click', () => {
-  let onOff = true
+  let onOff = false
   const mobileProjectRender = document.getElementsByClassName('left-side')[0]
   if (mobileProjectRender.id == 'nav'){
     mobileProjectRender.setAttribute('id', 'nav-active')

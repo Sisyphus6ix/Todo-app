@@ -25,3 +25,8 @@ export const submitTask = (project) => {
   taskName.value = "";
   taskDescription.value = "";
 };
+
+export const closeTaskModal = () => {
+  let modal = document.querySelector("#taskModal");
+  modal.hide()
+}
