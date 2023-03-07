@@ -100,11 +100,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .leftTask {
     display: flex;
+    font-size: 1.2rem;
     gap: 5px;
 }
 
@@ -184,5 +185,9 @@ input [type=text], input[type=button] {
 
     .hamburger {
         display: block;
+    }
+
+    button {
+        color: black;
     }
 }
